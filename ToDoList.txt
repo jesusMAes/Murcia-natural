@@ -1,0 +1,22 @@
+Vamos a poner orden en la cabeza, la idea es enseñar una lista de lugares naturales de murcia usando los datos abiertos, entonces lo primero que necesito es un componente principal que renderice el resto
+Dentro de este componente necesito tres componentes:
+
+-- HEADER: Con el título. usando bootstrap sería col-12  
+
+--Sidenav: con las opciones de filtrado. Como comparte con List en bootstrap sería col-3, su contenido debe renderizarse desde los datos entregados por la api 
+
+--LIST: esto enseña una serie de cards con unos datos, por simpleza lo mejor sería hacer de cada card un componente aparte y cargarlos con un ngFor  
+
+Para llamar a la api necesitaré un service que haga las llamadas y al que list esté suscrito para recibir los datos, para filtrarlos y comunicar el sidenav  podría usar store o el propio service
+
+De momento vamos a hacer la estructura general y ver como cargamos los datos, de ponerlos cucos y manipularlos que se encargue el yo de mañana
+
+OKAY Ya están creados los componentes y el servicio que hace la llamada, tal como está hoy 15/10 a las 21:41 tenemos el header, el sidenav sin el formmulario de filtrado y el list que llama a la api y renderiza el resultado en forma de cards, la llamada a la api es relativa porque va fatal y he tenido que llamar directamente a los datos, ella no los entregaba directamente y encadenar subscribes en una función para sacar el dato y llamar a otra era un lío que no merecía la pena
+
+IMPORTANTE, mira el proxy en proxy.conf.json, es lo que permite que no salte el error de cors policy
+
+Estoy trabajando en poner monas las tarjetas y en mostrar una imagen cuando esté roto el enlace usando el onError de img
+22:46 conseguida la imagen, estoy trabajando en la paginación, cuando acabe añadimos los 
+
+IMPORTANTE PARA ARRANCAR: usando el proxy el comando para levantarlo es ng serve --proxy-config proxy.conf.json
+voy a meterlo en package.json para ejecutarlo directamente con npm start

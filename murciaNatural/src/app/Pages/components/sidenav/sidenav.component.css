@@ -1,0 +1,28 @@
+ 
+.sidenav-container{
+  height: 84vh; 
+  margin-top: 10px;
+  background-color: #A8E890;
+  position: fixed;
+}
+
+.sidenav-content{
+  display: flex; 
+  background-color: #A8E890;
+  border: none;
+  width: 200px;
+}
+
+.filtros-wrapper mat-expansion-panel{
+  background-color: #CFFF8D !important;
+}
+
+.filtros-title {
+  font-size: 1.1rem;
+  color: black !important;
+  align-items: flex-end;
+}
+
+ 
+ 
+ 

@@ -1,0 +1,61 @@
+*{
+  background-color: #A8E890;
+}
+
+.list-wrapper {
+  width: 80vw;
+  
+}
+.card{
+  margin: 10px 10px 10px 5px;
+  background-color: #CFFF8D;
+}
+.card, .card mat-card-header, .card mat-card-content, .card p, .card img, .card mat-card-title, .card div{
+  background-color: #CFFF8D;
+
+}
+
+.card-imagen{
+  /* object-fit: cover !important; */
+  border-radius: 15px;
+  
+  width:90% ;
+  height: 50vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+mat-card-header{
+  margin-bottom: 10px;
+}
+
+.description-text{
+  overflow: hidden;
+  background-color: #A8E890 !important;
+}
+
+.colorLima{
+  background-color: #CFFF8D !important;
+}
+
+.listaDatos{
+  list-style: none !important;
+  align-content: center;
+}
+
+.icon{
+  background-color: #CFFF8D !important;
+  color: #425F57;
+  padding-top: 10px;
+  font-size: 1rem; 
+  font-weight: 200;
+
+}
+.enlace{
+  color:rgb(34, 33, 33);
+  text-decoration: underline;
+}
+ 
+::ng-deep .mat-paginator .mat-icon-button{
+  border: none;
+  outline: none;
+}

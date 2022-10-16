@@ -1,0 +1,11 @@
+
+{
+  "/api": {
+    "target": "https://nexo.carm.es/nexo/archivos/recursos/opendata/json/EspaciosNaturales.json",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

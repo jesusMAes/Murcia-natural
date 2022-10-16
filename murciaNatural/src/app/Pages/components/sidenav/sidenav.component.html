@@ -1,0 +1,41 @@
+<mat-drawer-container class="sidenav-container" autosize>
+  <mat-drawer #drawer class="sidenav-content" mode="side" opened="true" >
+ 
+    <mat-accordion multi="true" class="filtros-wrapper" >
+    <mat-expansion-panel hideToggle disabled>
+      <mat-expansion-panel-header>
+        <mat-panel-title  class="filtros-title">Filtros</mat-panel-title>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Municipio
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div *ngFor="let municipio of filtroMunicipio;  let i = index">
+          <mat-checkbox [checked]="municipioSeleccionado === i" (change)="cambiaMunicipio(i)">{{municipio}}</mat-checkbox>
+        </div>
+        
+      </mat-expansion-panel>
+
+      <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Tipo de espacio
+          </mat-panel-title>
+ 
+        </mat-expansion-panel-header>
+        <div *ngFor="let tipo of filtroEspacio;  let i = index">
+          <mat-checkbox [checked]="tipoSeleccionado === i" (change)="cambiaTipo(i)">{{tipo}}</mat-checkbox>
+        </div>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+ 
+  </mat-drawer>
+ 
+
+</mat-drawer-container>
+ 

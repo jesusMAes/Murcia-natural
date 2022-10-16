@@ -1,0 +1,70 @@
+
+<mat-paginator 
+#paginator 
+(page)="handlePageEvent($event)"
+[length]="length"
+[pageSize]="pageSize"
+[pageIndex]="pageIndex"
+[pageSizeOptions]="pageSizeOptions"
+aria-label="Select page">
+</mat-paginator>
+
+<div fxLayout="row wrap" class="list-wrapper" >
+
+<mat-card 
+  *ngFor="let item of listadoLugares  |slice: ((paginator.pageIndex)*pageSize): ((paginator.pageIndex+1)*pageSize)"
+   fxFlex="31%"
+   class="card">
+  <mat-card-header> 
+    <mat-card-title>{{item.Nombre}}</mat-card-title>
+  </mat-card-header>
+
+  <p-galleria [value]="loadGallery(item)"
+              [showItemNavigators]="true" 
+              [circular]="true" 
+              [showThumbnails]="false">
+    <ng-template pTemplate="item" let-item>
+        <img 
+          mat-card-image 
+          [src]="item" class="card-imagen" 
+          onerror="this.src= '../../../../assets/imagenSustituta.png'"
+         />
+    </ng-template>
+    
+  </p-galleria>
+
+  <mat-card-content> 
+    <div class="colorLima">
+      <ul class="colorLima listaDatos">
+        <li class="colorLima">
+          <mat-icon class="icon">location_on</mat-icon>
+          <strong class="colorLima">Municipio:</strong> {{item.Municipio || 'No disponible'}}
+        </li> 
+        <li class="colorLima">
+          <mat-icon class="icon">tag</mat-icon>
+          <strong class="colorLima">Código Postal:</strong> {{item['C.P.'] || 'No disponible'}}
+        </li>
+        <li class="colorLima">
+          <mat-icon class="icon">turn_right</mat-icon>
+          <a href="http://www.google.com/maps/dir/?api=1&destination={{item.Longitud}},{{item.Latitud}}" class="enlace">
+            <strong class="colorLima">Cómo Llegar</strong>
+          </a>            
+        </li>
+    </ul>
+    </div>
+    <mat-accordion >
+      <mat-expansion-panel  matRipple>
+        <mat-expansion-panel-header>
+          <mat-panel-title><strong> Descripción</strong></mat-panel-title>
+        </mat-expansion-panel-header>
+        <div innerHTML="{{item['Descripción']}}" class="description-text"></div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+
+</mat-card>
+
+</div>
+
+{{listadoLugaresPrueba}}
+ 
